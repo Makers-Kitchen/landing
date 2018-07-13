@@ -2,10 +2,10 @@
 function join_slack() {
     var email = $('#page_controls_email').val();
     var email2 = $('#page_controls_email_2').val();
-    if(email.length > 0) {
+    if (email.length > 0) {
         send_invite(email);
     }
-    if(email2.length > 0) {
+    if (email2.length > 0) {
         send_invite(email2);
     }
 }
@@ -23,7 +23,9 @@ function send_invite(email) {
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 notie.alert(3, errorThrown, 3);
-                console.log(errorThrown);
+                console.log(errorThrown.ok);
+                console.log(errorThrown[0].ok);
+                alert(errorThrown.ok);
             }
         });
     }
