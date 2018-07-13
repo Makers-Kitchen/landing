@@ -1,6 +1,16 @@
 
 function join_slack() {
     var email = $('#page_controls_email').val();
+    var email2 = $('#page_controls_email_2').val();
+    if(email.length > 0) {
+        send_invite(email);
+    }
+    if(email2.length > 0) {
+        send_invite(email2);
+    }
+}
+
+function send_invite(email) {
     if (email.length > 0) {
         $.ajax({
             dataType: 'json',
