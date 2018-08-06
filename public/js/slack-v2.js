@@ -29,12 +29,15 @@ function send_invite(email) {
             // ...
         });
 
+        var token = 'xoxp-150626801090-149920619120-397262716978-edd6655385b00d14bee212e9566eec92';
+
         $.ajax({
             dataType: 'json',
             processData: false,
             type: 'POST',
-            url: 'https://slack.com/api/users.admin.invite?token=xoxp-394441928593-397352076484-398634338967-9695fc8930abc0f738f3f2599dc231e0&email=' + email,
+            url: 'https://slack.com/api/users.admin.invite?token=' + token + '&email=' + email,
             success: function (msg) {
+                console.log(msg);
                 if (msg.error == "already_invited") {
                     notie.alert(1, 'An invitation to this email has already been sent 😃 👌', 5);
                     return;
