@@ -6,6 +6,13 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/24hourstartup",
+        "destination": "https://booligoosh.github.io/24hr-startup-grid/index.html?streamers=jamesivings||dinkydani21||ethan_the_maker||sergiomattei",
+        "type": 302
+      }
+    ],
     "cleanUrls": true
   }
 }

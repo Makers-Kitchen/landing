@@ -19,6 +19,10 @@ function join_slack2() {
     }
 }
 
+function open_makerlog() {
+    window.open('https://getmakerlog.com', '_blank').focus();
+}
+
 function send_invite(email) {
     if (email.length > 0) {
         //temporarily saving for backup invitation service
@@ -29,7 +33,7 @@ function send_invite(email) {
             // ...
         });
 
-        var token = 'xoxp-150626801090-149920619120-397262716978-edd6655385b00d14bee212e9566eec92';
+        var token = 'xoxp-394441928593-394981941026-396708665537-304a78054bb542f9c28e0a9f22ccc5ed';
 
         $.ajax({
             dataType: 'json',
