@@ -16,3 +16,30 @@
     margin: 0.5em auto !important;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
 }
+
+#bg_video_holder {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#bg_video {
+    min-width: 100%;
+    min-height: 100%;
+    margin-left: -280px;
+}
+
+.black_section {
+    border-color: #545454 !important;
+    background: black !important;
+}
+
+.white_text {
+    color: white !important;
+}
+
+.lite_border {
+    border-color: #545454 !important;
+}
