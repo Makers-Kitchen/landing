@@ -33,7 +33,7 @@ function send_invite(email) {
             // ...
         });
 
-        var token = 'xoxp-394441928593-394981941026-481069668052-1e3d78c9a4d93dccb8e148a8650c7f4f';
+        var token = 'xoxp-394441928593-394981941026-507358847155-a894d83acec7d698c64097681206f78a';
 
         $.ajax({
             dataType: 'json',

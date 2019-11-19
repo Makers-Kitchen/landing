@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>Maker Map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='map'></div>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibWFrZXJza2l0Y2hlbiIsImEiOiJjanFqNHFsZ3owNzZ1M3htbDk4cWVwamp5In0.v8Qev7To3lXX1fYqrcgeSg';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/makerskitchen/cjqj520sh0el52ro4tri9v59p',
+            center: [-71.020000, 42.362400],
+            zoom: 1.0
+        });
+
+        map.on("load", function () {
+            /* Image: An image is loaded and added to the map. */
+            map.loadImage("https://avatars.slack-edge.com/2018-12-21/509899402162_09462a6aa9f2e518dfc9_512.jpg", function (error, image) {
+                if (error) throw error;
+                map.addImage("custom-marker", image);
+                /* Style layer: A style layer ties together the source and image and specifies how they are displayed on the map. */
+                map.addLayer({
+                    id: "markers",
+                    type: "symbol",
+                    /* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
+                    source: {
+                        type: "geojson",
+                        data: {
+                            type: "FeatureCollection",
+                            features: [{ "type": "Feature", "geometry": { "type": "Point", "coordinates": [-73.95801396094886, 44.403166952585394] } }]
+                        }
+                    },
+                    layout: {
+                        "icon-image": "custom-marker",
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
